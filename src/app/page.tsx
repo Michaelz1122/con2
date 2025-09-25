@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Analytics from '@/components/Analytics'
-import ConversionTracking from '@/components/ConversionTracking'
+import dynamic from 'next/dynamic'
+const Analytics = dynamic(() => import('@/components/Analytics'), { ssr: false })
+const ConversionTracking = dynamic(() => import('@/components/ConversionTracking'), { ssr: false })
 import Navigation from '@/components/Navigation'
 import { Button } from '@/components/ui/button'
 import Logo from '@/components/Logo'
